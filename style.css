@@ -1,0 +1,1399 @@
+/* ==========================================================================
+   ELEVATE PROPERTIES — Editorial Architecture & Residences
+   Anti-slop, high-craft architectural design system:
+   - Deep architectural graphite ground (#0c0c0e, #121216, #18181e)
+   - Strict 2-typeface system: Barlow Condensed (Display/Headers) + Inter (Text/UI)
+   - Strict 5-step modular typographic scale
+   - Clean, quiet surfaces with tonal steps instead of hairlines or outlined boxes
+   - Full-bleed cinematic photography and varied editorial layout
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Surfaces & Ink */
+  --color-bg-base: #0c0c0e;
+  --color-bg: #0c0c0e;
+  --color-surface: #131317;
+  --color-surface-elevated: #1a1a20;
+  --color-surface-hover: #22222a;
+  
+  --color-ink: #f5f5f7;
+  --color-ink-muted: #b8b8c2;
+  --color-ink-dim: #9898a4;
+  
+  --color-accent: #e5a962;
+
+  /* Strict 2-Font Typography */
+  --font-display: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  /* Strict 5-Step Modular Typographic Scale */
+  --size-display: clamp(48px, 6.5vw, 92px);
+  --size-h2: clamp(28px, 3.5vw, 42px);
+  --size-h3: 22px;
+  --size-body: 16px;
+  --size-small: 13px;
+
+  /* Layout & Rhythm */
+  --site-max-width: 1360px;
+  --site-gutter: clamp(20px, 4vw, 48px);
+  --section-gap: clamp(96px, 11vw, 160px);
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-normal: 0.3s;
+  --duration-smooth: 0.5s;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Global Standards
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--size-body);
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+}
+
+.site-container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
+  padding-inline: var(--site-gutter);
+}
+
+/* --------------------------------------------------------------------------
+   3. Buttons & Action Links
+   -------------------------------------------------------------------------- */
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-text);
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: #0c0c0e;
+  background-color: var(--color-ink);
+  border: none;
+  border-radius: 2px;
+  transition: background-color var(--duration-normal) var(--ease-out), transform var(--duration-normal) var(--ease-out);
+  white-space: nowrap;
+}
+
+.btn-solid:hover,
+.btn-solid:focus-visible {
+  background-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-solid:active {
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   4. Header & Navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  transition: background-color var(--duration-normal) var(--ease-out);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.brand-sub {
+  font-size: var(--size-small);
+  letter-spacing: 0.14em;
+  color: var(--color-ink-muted);
+}
+
+.main-nav {
+  display: flex;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--color-ink);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 36px;
+  height: 36px;
+  padding: 4px;
+}
+
+.menu-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-ink);
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+/* --------------------------------------------------------------------------
+   5. Mobile Drawer
+   -------------------------------------------------------------------------- */
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: #0c0c0e;
+  padding: 32px var(--site-gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease-out);
+  visibility: hidden;
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawer-close {
+  font-size: 32px;
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-block: 40px;
+}
+
+.drawer-link {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.drawer-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drawer-copy {
+  font-size: var(--size-small);
+  color: var(--color-ink-dim);
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-block-start: 12px;
+  padding-block-end: clamp(48px, 6vw, 80px);
+}
+
+.hero-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 520px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: var(--color-surface);
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  animation: heroSubtleDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroSubtleDrift {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.03); }
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 12, 14, 0.95) 0%,
+    rgba(12, 12, 14, 0.55) 35%,
+    rgba(12, 12, 14, 0.1) 65%,
+    rgba(12, 12, 14, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: absolute;
+  bottom: clamp(24px, 5vw, 64px);
+  left: clamp(24px, 5vw, 64px);
+  max-width: 680px;
+  z-index: 2;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: var(--size-display);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero-subtext {
+  font-size: 19px;
+  line-height: 1.55;
+  color: #f5f5f7;
+  margin-bottom: 28px;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ambient-audio-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px;
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink);
+  background-color: var(--color-surface);
+  border-radius: 2px;
+  transition: background-color var(--duration-normal) var(--ease-out);
+}
+
+.ambient-audio-btn:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.ambient-audio-btn.playing {
+  background-color: var(--color-accent);
+  color: #0c0c0e;
+}
+
+.audio-waves {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 12px;
+}
+
+.wave-bar {
+  display: block;
+  width: 2px;
+  height: 4px;
+  background-color: currentColor;
+  transition: height 0.2s var(--ease-out);
+}
+
+.ambient-audio-btn.playing .wave-bar:nth-child(1) {
+  animation: wavePulse 1s ease-in-out infinite alternate;
+}
+.ambient-audio-btn.playing .wave-bar:nth-child(2) {
+  animation: wavePulse 0.7s ease-in-out infinite alternate 0.2s;
+}
+.ambient-audio-btn.playing .wave-bar:nth-child(3) {
+  animation: wavePulse 1.2s ease-in-out infinite alternate 0.4s;
+}
+
+@keyframes wavePulse {
+  from { height: 4px; }
+  to { height: 12px; }
+}
+
+.hero-peek-card {
+  position: absolute;
+  top: clamp(24px, 4vw, 48px);
+  right: clamp(24px, 4vw, 48px);
+  width: 90px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.hero-peek-card:hover {
+  transform: translateY(-2px);
+}
+
+.peek-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   7. Studio Statement Section
+   -------------------------------------------------------------------------- */
+.statement-section {
+  padding-block: var(--section-gap);
+  background-color: var(--color-bg);
+}
+
+.statement-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+.statement-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  text-transform: uppercase;
+}
+
+.statement-lead {
+  font-size: var(--size-h3);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. Section Heading Group Standards
+   -------------------------------------------------------------------------- */
+.section-heading-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+}
+
+.section-note {
+  font-size: var(--size-body);
+  color: var(--color-ink-dim);
+}
+
+/* --------------------------------------------------------------------------
+   9. Featured Projects (Editorial Asymmetry)
+   -------------------------------------------------------------------------- */
+.projects-section {
+  padding-block: var(--section-gap);
+  background-color: var(--color-surface);
+}
+
+.project-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.filter-tab {
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink-dim);
+  padding-bottom: 4px;
+  position: relative;
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.filter-tab:hover,
+.filter-tab:focus-visible {
+  color: var(--color-ink);
+}
+
+.filter-tab.active {
+  color: var(--color-ink);
+}
+
+.filter-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-ink);
+}
+
+.projects-editorial-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Flagship Residence Card */
+.project-feature-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  background-color: var(--color-surface-elevated);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background-color var(--duration-normal) var(--ease-out);
+}
+
+.project-feature-card:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.feature-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-smooth) var(--ease-out);
+}
+
+.project-feature-card:hover .feature-img {
+  transform: scale(1.03);
+}
+
+.feature-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12, 12, 14, 0.4) 0%, transparent 60%);
+}
+
+.feature-meta {
+  padding: clamp(28px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meta-header {
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.meta-location {
+  display: block;
+  font-size: var(--size-small);
+  color: var(--color-ink-muted);
+}
+
+.feature-desc {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  margin-bottom: 24px;
+}
+
+.feature-action {
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-trigger-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  opacity: 0;
+}
+
+/* Diptych Secondary Grid */
+.projects-diptych-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.project-diptych-card {
+  position: relative;
+  background-color: var(--color-surface-elevated);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: background-color var(--duration-normal) var(--ease-out);
+}
+
+.project-diptych-card:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.diptych-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.diptych-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-smooth) var(--ease-out);
+}
+
+.project-diptych-card:hover .diptych-img {
+  transform: scale(1.03);
+}
+
+.diptych-meta {
+  padding: 24px clamp(20px, 3vw, 36px);
+}
+
+.diptych-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   10. Practice Metrics Ribbon
+   -------------------------------------------------------------------------- */
+.stats-section {
+  padding-block: clamp(48px, 6vw, 72px);
+  background-color: var(--color-bg);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6vw, 72px);
+  font-weight: 700;
+  line-height: 0.95;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.stat-descriptor {
+  font-size: var(--size-small);
+  color: var(--color-ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. Studio Philosophy Section
+   -------------------------------------------------------------------------- */
+.philosophy-section {
+  padding-block: var(--section-gap);
+  background-color: var(--color-surface);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(32px, 6vw, 84px);
+  align-items: center;
+}
+
+.philosophy-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.philosophy-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-ink);
+  margin-bottom: 20px;
+}
+
+.philosophy-text {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  margin-bottom: 32px;
+}
+
+.philosophy-actions {
+  display: flex;
+}
+
+.philosophy-media-frame {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--color-surface-elevated);
+}
+
+.philosophy-img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.philosophy-caption {
+  padding: 16px 20px;
+  font-size: var(--size-small);
+  color: var(--color-ink-dim);
+  background-color: var(--color-surface-elevated);
+}
+
+/* --------------------------------------------------------------------------
+   12. Material Archive ("The Live Thing")
+   -------------------------------------------------------------------------- */
+.materials-section {
+  padding-block: var(--section-gap);
+  background-color: var(--color-bg);
+}
+
+.materials-explorer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.materials-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.material-tab-item {
+  width: 100%;
+  text-align: left;
+  padding: 20px 24px;
+  background-color: var(--color-surface);
+  border-radius: 3px;
+  transition: background-color var(--duration-normal) var(--ease-out);
+}
+
+.material-tab-item:hover {
+  background-color: var(--color-surface-hover);
+}
+
+.material-tab-item.active {
+  background-color: var(--color-surface-elevated);
+}
+
+.tab-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.tab-origin {
+  display: block;
+  font-size: var(--size-small);
+  color: var(--color-ink-dim);
+}
+
+.material-display-card {
+  background-color: var(--color-surface);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.specimen-media-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--color-surface-elevated);
+}
+
+.specimen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s var(--ease-out);
+}
+
+.specimen-meta {
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.specimen-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.specimen-desc {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  margin-bottom: 24px;
+}
+
+.specimen-specs-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  padding-top: 16px;
+}
+
+.spec-row-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-prop {
+  font-size: var(--size-small);
+  color: var(--color-ink-dim);
+  margin-bottom: 2px;
+}
+
+.spec-val {
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+/* --------------------------------------------------------------------------
+   13. Studio Disciplines
+   -------------------------------------------------------------------------- */
+.principles-section {
+  padding-block: var(--section-gap);
+  background-color: var(--color-surface);
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.principle-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.principle-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.principle-desc {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+}
+
+/* --------------------------------------------------------------------------
+   14. Editorial Journal
+   -------------------------------------------------------------------------- */
+.journal-section {
+  padding-block: var(--section-gap);
+  background-color: var(--color-bg);
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.journal-card {
+  background-color: var(--color-surface);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.journal-media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.journal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-smooth) var(--ease-out);
+}
+
+.journal-card:hover .journal-img {
+  transform: scale(1.02);
+}
+
+.journal-body {
+  padding: clamp(24px, 3vw, 36px);
+}
+
+.journal-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h3);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.journal-summary {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  margin-bottom: 20px;
+}
+
+.journal-link {
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.journal-link:hover {
+  opacity: 0.8;
+}
+
+/* --------------------------------------------------------------------------
+   15. Consultation Invitation Banner
+   -------------------------------------------------------------------------- */
+.inquiry-banner-section {
+  padding-block-end: var(--section-gap);
+  background-color: var(--color-bg);
+}
+
+.inquiry-banner-card {
+  background-color: var(--color-surface-elevated);
+  border-radius: 4px;
+  padding: clamp(36px, 6vw, 72px);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.banner-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--color-ink);
+  margin-bottom: 12px;
+}
+
+.banner-sub {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+}
+
+.banner-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-banner-action {
+  padding: 16px 32px;
+}
+
+/* --------------------------------------------------------------------------
+   16. Site Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  padding-block: clamp(48px, 6vw, 80px) 40px;
+  background-color: var(--color-surface);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.footer-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-link {
+  font-size: var(--size-small);
+  color: var(--color-ink-muted);
+  transition: color var(--duration-normal) var(--ease-out);
+}
+
+.footer-link:hover {
+  color: var(--color-ink);
+}
+
+.footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: var(--size-small);
+  color: var(--color-ink-dim);
+}
+
+/* --------------------------------------------------------------------------
+   17. Modals
+   -------------------------------------------------------------------------- */
+.project-modal-backdrop,
+.inquiry-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background-color: rgba(12, 12, 14, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s var(--ease-out), visibility 0.3s var(--ease-out);
+}
+
+.project-modal-backdrop.open,
+.inquiry-modal-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal-panel,
+.inquiry-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #121216;
+  border-radius: 4px;
+  padding: clamp(24px, 4vw, 48px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-ink);
+  opacity: 0.7;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.modal-close-btn:hover {
+  opacity: 1;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.modal-media-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 3px;
+  background-color: var(--color-surface);
+}
+
+.modal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+}
+
+.modal-location {
+  font-size: var(--size-small);
+  color: var(--color-ink-muted);
+  margin-bottom: 20px;
+}
+
+.modal-narrative {
+  font-size: var(--size-body);
+  line-height: 1.6;
+  color: var(--color-ink-muted);
+  margin-bottom: 24px;
+}
+
+.modal-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--size-small);
+}
+
+.spec-name {
+  color: var(--color-ink-dim);
+}
+
+.spec-val {
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+/* Inquiry Form */
+.inquiry-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inquiry-title {
+  font-family: var(--font-display);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+
+.inquiry-sub {
+  font-size: var(--size-body);
+  color: var(--color-ink-muted);
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-label {
+  font-size: var(--size-small);
+  color: var(--color-ink-muted);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-surface-elevated);
+  border-radius: 2px;
+  color: var(--color-ink);
+  font-family: inherit;
+  font-size: var(--size-body);
+  outline: none;
+  transition: border-color var(--duration-normal) var(--ease-out);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   18. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .statement-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .project-feature-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-diptych-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .materials-explorer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .principles-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .inquiry-banner-card {
+    grid-template-columns: 1fr;
+  }
+  
+  .banner-right {
+    justify-content: flex-start;
+  }
+  
+  .modal-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+  
+  .header-actions .btn-solid {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .hero-peek-card {
+    display: none;
+  }
+
+  .hero-media-wrapper {
+    min-height: 520px;
+    aspect-ratio: auto;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .hero-subtext {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .journal-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   19. Motion Layer & Scroll Reveal
+   -------------------------------------------------------------------------- */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-img {
+    animation: none;
+  }
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

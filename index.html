@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELEVATE PROPERTIES — Architecture & Selected Residences</title>
+  <meta name="description" content="Elevate Properties is an architectural studio designing site-responsive private residences across the Mediterranean and coastal California.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23eceae4'>E</text></svg>">
+  
+  <!-- Fonts: Barlow Condensed (Monumental Display & Headers) and Inter (Architectural Text & UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header" id="header">
+    <div class="site-container header-inner">
+      
+      <a href="#hero" class="brand-logo" aria-label="Elevate Properties">
+        <span class="brand-name">E L E V A T E</span>
+        <span class="brand-sub">PROPERTIES</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#studio" class="nav-link">Studio</a></li>
+          <li><a href="#materials" class="nav-link">Archive</a></li>
+          <li><a href="#journal" class="nav-link">Journal</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-solid open-inquiry-modal" data-modal="inquiry">
+          Start a project
+        </button>
+        <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="brand-name">E L E V A T E</span>
+        <span class="brand-sub">PROPERTIES</span>
+      </div>
+      <button type="button" class="drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#projects" class="drawer-link">Projects</a></li>
+      <li><a href="#studio" class="drawer-link">Studio</a></li>
+      <li><a href="#materials" class="drawer-link">Materials Archive</a></li>
+      <li><a href="#journal" class="drawer-link">Journal</a></li>
+      <li><a href="#contact" class="drawer-link">Contact</a></li>
+    </ul>
+    <div class="drawer-footer">
+      <button type="button" class="btn-solid open-inquiry-modal" data-modal="inquiry" style="width: 100%; justify-content: center;">Start a project</button>
+      <div class="drawer-copy">Elevate Properties. All rights reserved.</div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero" aria-label="Featured Residence">
+      <div class="site-container hero-container">
+        
+        <div class="hero-media-wrapper">
+          <img 
+            id="hero-main-img"
+            src="images/hero-cliffside.jpg" 
+            alt="Cantilevered concrete and glass residence on rocky coastal cliff at twilight" 
+            class="hero-bg-img"
+            loading="eager"
+            fetchpriority="high"
+          >
+          <div class="hero-vignette" aria-hidden="true"></div>
+
+          <!-- Hero Content Overlay -->
+          <div class="hero-content">
+            <h1 class="hero-title">BUILT TO ENDURE.</h1>
+            <p class="hero-subtext">Elevate Properties is an architectural studio designing site-responsive private residences across the Mediterranean and coastal California.</p>
+            
+            <div class="hero-actions">
+              <a href="#projects" class="btn-solid">
+                Explore projects ↗
+              </a>
+              
+              <button type="button" class="ambient-audio-btn" id="ambient-btn" aria-label="Toggle twilight coastal ambient atmosphere" title="Ambient Atmosphere">
+                <span class="audio-waves" aria-hidden="true">
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                  <span class="wave-bar"></span>
+                </span>
+                <span class="audio-label">Atmosphere</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Subtle Horizon Switcher Sliver -->
+          <aside class="hero-peek-card" id="hero-peek" title="Switch featured horizon" role="button" tabindex="0" aria-label="View next project preview">
+            <img 
+              id="hero-peek-img"
+              src="images/ref-hero-side.jpg" 
+              alt="Vertical architectural preview" 
+              class="peek-img"
+              onerror="this.src='images/project-ridge.jpg'"
+            >
+          </aside>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Studio Statement Section -->
+    <section class="statement-section" id="studio" aria-label="Studio Statement">
+      <div class="site-container">
+        <div class="statement-grid">
+          
+          <div class="statement-col-left">
+            <h2 class="statement-title">
+              Architecture with<br>a point of view
+            </h2>
+          </div>
+
+          <div class="statement-col-right">
+            <p class="statement-lead">
+              We design timeless, site-responsive spaces where architecture, nature, and human life exist in perfect balance. From coastal retreats to contemporary residences, each project is a lasting expression of place, purpose, and craft.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section (Curated Editorial Asymmetry) -->
+    <section class="projects-section" id="projects" aria-label="Featured Projects">
+      <div class="site-container">
+        
+        <div class="section-heading-group">
+          <h2 class="section-title">FEATURED PROJECTS</h2>
+          <div class="project-filter-bar">
+            <button type="button" class="filter-tab active" data-filter="all">All Works</button>
+            <button type="button" class="filter-tab" data-filter="coastal">Coastal</button>
+            <button type="button" class="filter-tab" data-filter="alpine">Alpine & Lake</button>
+            <button type="button" class="filter-tab" data-filter="sanctuary">Sanctuaries</button>
+          </div>
+        </div>
+
+        <div class="projects-editorial-layout">
+          
+          <!-- Flagship Residence: The Horizon House (Dominant Cinematic Feature) -->
+          <article class="project-feature-card" data-category="coastal" data-project-id="horizon">
+            <div class="feature-media">
+              <img 
+                src="images/project-horizon.jpg" 
+                alt="The Horizon House in Costa Brava, Spain" 
+                class="feature-img" 
+                loading="lazy"
+              >
+              <div class="feature-scrim" aria-hidden="true"></div>
+            </div>
+            <div class="feature-meta">
+              <div class="meta-header">
+                <h3 class="feature-title">THE HORIZON HOUSE</h3>
+                <span class="meta-location">Costa Brava, Spain</span>
+              </div>
+              <p class="feature-desc">Perched cantilevered above the Mediterranean coastline, dissolving boundaries between interior solace and oceanic winds.</p>
+              <span class="feature-action">Inspect residence monographs ↗</span>
+            </div>
+            <button type="button" class="card-trigger-overlay" aria-label="Open details for The Horizon House"></button>
+          </article>
+
+          <!-- Secondary Diptych -->
+          <div class="projects-diptych-grid">
+            
+            <!-- Diptych Card 1: Stone / Light -->
+            <article class="project-diptych-card" data-category="alpine" data-project-id="stone-light">
+              <div class="diptych-media">
+                <img 
+                  src="images/project-stone-light.jpg" 
+                  alt="Stone / Light Villa in Como, Italy" 
+                  class="diptych-img" 
+                  loading="lazy"
+                >
+                <div class="feature-scrim" aria-hidden="true"></div>
+              </div>
+              <div class="diptych-meta">
+                <h3 class="diptych-title">STONE / LIGHT</h3>
+                <span class="meta-location">Como, Italy</span>
+              </div>
+              <button type="button" class="card-trigger-overlay" aria-label="Open details for Stone / Light"></button>
+            </article>
+
+            <!-- Diptych Card 2: The Ridge Retreat -->
+            <article class="project-diptych-card" data-category="coastal" data-project-id="ridge-retreat">
+              <div class="diptych-media">
+                <img 
+                  src="images/project-ridge.jpg" 
+                  alt="The Ridge Retreat in Big Sur, California" 
+                  class="diptych-img" 
+                  loading="lazy"
+                >
+                <div class="feature-scrim" aria-hidden="true"></div>
+              </div>
+              <div class="diptych-meta">
+                <h3 class="diptych-title">THE RIDGE RETREAT</h3>
+                <span class="meta-location">Big Sur, California</span>
+              </div>
+              <button type="button" class="card-trigger-overlay" aria-label="Open details for The Ridge Retreat"></button>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Practice Metrics Ribbon -->
+    <section class="stats-section" aria-label="Practice Overview">
+      <div class="site-container">
+        <div class="stats-grid">
+          
+          <div class="stat-item">
+            <span class="stat-value" data-target="18">18</span>
+            <span class="stat-descriptor">YEARS OF PRACTICE</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-value" data-target="26">26</span>
+            <span class="stat-descriptor">BUILT PROJECTS</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-value" data-target="7">7</span>
+            <span class="stat-descriptor">COUNTRIES</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section" id="philosophy" aria-label="Studio Philosophy">
+      <div class="site-container">
+        <div class="philosophy-grid">
+          
+          <div class="philosophy-left">
+            <h2 class="philosophy-title">
+              FORM FOLLOWS FEELING.
+            </h2>
+            <p class="philosophy-text">
+              We believe great spaces do more than look exceptional; they feel right. Our work is driven by a deep respect for topography, raw geology, and the ritual of residential living.
+            </p>
+            <div class="philosophy-actions">
+              <button type="button" class="btn-solid open-inquiry-modal" data-modal="inquiry">
+                Consult with our studio ↗
+              </button>
+            </div>
+          </div>
+
+          <div class="philosophy-right">
+            <div class="philosophy-media-frame">
+              <img 
+                src="images/interior-philosophy.jpg" 
+                alt="Minimal living room with floor-to-ceiling glass and twilight ocean view" 
+                class="philosophy-img" 
+                loading="lazy"
+              >
+              <div class="philosophy-caption">
+                Travertine Navona, Recessed Hearth, & Twilight Horizon
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- The Material Archive ("The Live Thing") -->
+    <section class="materials-section" id="materials" aria-label="Material Archive">
+      <div class="site-container">
+        
+        <div class="section-heading-group">
+          <h2 class="section-title">THE MATERIAL ARCHIVE</h2>
+          <p class="section-note">Tactile specimens and geological selections from historical quarries.</p>
+        </div>
+
+        <div class="materials-explorer-grid">
+          
+          <!-- Material Selector Tabs -->
+          <div class="materials-nav-list" role="tablist" aria-label="Architectural Materials">
+            
+            <button type="button" class="material-tab-item active" role="tab" aria-selected="true" data-material="travertine">
+              <div class="tab-info">
+                <h3 class="tab-title">TRAVERTINE NAVONA</h3>
+                <span class="tab-origin">Tuscan Quarry · Honed Vein-Cut</span>
+              </div>
+            </button>
+
+            <button type="button" class="material-tab-item" role="tab" aria-selected="false" data-material="concrete">
+              <div class="tab-info">
+                <h3 class="tab-title">BOARD-FORMED CONCRETE</h3>
+                <span class="tab-origin">Titanium White Portland · Cedar Grain</span>
+              </div>
+            </button>
+
+            <button type="button" class="material-tab-item" role="tab" aria-selected="false" data-material="stone">
+              <div class="tab-info">
+                <h3 class="tab-title">ROUGH-HEWN LIMESTONE</h3>
+                <span class="tab-origin">Lombardy Alps · Dry-Stacked Masonry</span>
+              </div>
+            </button>
+
+            <button type="button" class="material-tab-item" role="tab" aria-selected="false" data-material="timber">
+              <div class="tab-info">
+                <h3 class="tab-title">YAKISUGI CHARRED CEDAR</h3>
+                <span class="tab-origin">Traditional Pyrolysis · Deep Carbon Grain</span>
+              </div>
+            </button>
+
+          </div>
+
+          <!-- Interactive Specimen Display -->
+          <div class="material-display-card" id="material-display">
+            <div class="specimen-media-wrap">
+              <img 
+                id="specimen-img"
+                src="images/material-travertine.jpg" 
+                alt="Tactile macro specimen of Travertine Navona stone" 
+                class="specimen-img"
+              >
+            </div>
+            
+            <div class="specimen-meta">
+              <h3 id="specimen-name" class="specimen-title">TRAVERTINE NAVONA</h3>
+              <p id="specimen-desc" class="specimen-desc">
+                Extracted from historical quarries in Tivoli, this travertine exhibits delicate linear porosity and warm bone hues. Honed without synthetic filler to retain tactile coolness under direct sun.
+              </p>
+              
+              <div class="specimen-specs-table">
+                <div class="spec-row-item">
+                  <span class="spec-prop">Thermal Mass</span>
+                  <span id="spec-thermal" class="spec-val">High (840 J/kg·K)</span>
+                </div>
+                <div class="spec-row-item">
+                  <span class="spec-prop">Acoustic Damping</span>
+                  <span id="spec-acoustic" class="spec-val">0.32 NRC (Unfilled)</span>
+                </div>
+                <div class="spec-row-item">
+                  <span class="spec-prop">Aging Character</span>
+                  <span id="spec-aging" class="spec-val">Noble Honey Patina</span>
+                </div>
+                <div class="spec-row-item">
+                  <span class="spec-prop">Deployment</span>
+                  <span id="spec-project" class="spec-val">Stone / Light & Salon V</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Studio Disciplines -->
+    <section class="principles-section" id="principles" aria-label="Studio Disciplines">
+      <div class="site-container">
+        
+        <div class="section-heading-group">
+          <h2 class="section-title">PRACTICE DISCIPLINES</h2>
+          <p class="section-note">Rigor, reduction, and geological sensitivity.</p>
+        </div>
+
+        <div class="principles-grid">
+          
+          <div class="principle-col">
+            <h3 class="principle-title">SITE ARCHAEOLOGY</h3>
+            <p class="principle-desc">
+              We listen before we sketch. Every topography carries rock formations and light angles that dictate the building's geometry.
+            </p>
+          </div>
+
+          <div class="principle-col">
+            <h3 class="principle-title">MONOLITHIC WEIGHT</h3>
+            <p class="principle-desc">
+              Defying gravity requires monumental mass. Deep cantilevers and cast-in-place concrete spine walls anchor structures against coastal winds.
+            </p>
+          </div>
+
+          <div class="principle-col">
+            <h3 class="principle-title">CHIAROSCURO</h3>
+            <p class="principle-desc">
+              Light has no power without shadow. We sculpt rooms around dusk, where indirect cove illumination meets the fading horizon.
+            </p>
+          </div>
+
+          <div class="principle-col">
+            <h3 class="principle-title">TIME AS MATERIAL</h3>
+            <p class="principle-desc">
+              We reject transient finishes that need synthetic upkeep. Honed stone, weathered bronze, and charred cedar grow more beautiful over decades.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Editorial Journal -->
+    <section class="journal-section" id="journal" aria-label="Studio Journal">
+      <div class="site-container">
+        
+        <div class="section-heading-group">
+          <h2 class="section-title">THE JOURNAL</h2>
+          <p class="section-note">Essays on material poetics and nocturnal lighting design.</p>
+        </div>
+
+        <div class="journal-grid">
+          
+          <article class="journal-card">
+            <div class="journal-media">
+              <img 
+                src="images/journal-coastal.jpg" 
+                alt="Concrete staircase descending into coastal granite sea rocks" 
+                class="journal-img" 
+                loading="lazy"
+              >
+            </div>
+            <div class="journal-body">
+              <h3 class="journal-title">The Poetics of Concrete: Coastal Form</h3>
+              <p class="journal-summary">
+                A technical exploration of board-formed concrete formulations engineered to withstand sea salt aerosol while developing a velvety mineral bloom over decades.
+              </p>
+              <button type="button" class="journal-link open-inquiry-modal" data-modal="inquiry">Read essay ↗</button>
+            </div>
+          </article>
+
+          <article class="journal-card">
+            <div class="journal-media">
+              <img 
+                src="images/journal-twilight.jpg" 
+                alt="Glass and steel pavilion glowing warmly in twilight forest" 
+                class="journal-img" 
+                loading="lazy"
+              >
+            </div>
+            <div class="journal-body">
+              <h3 class="journal-title">Designing with Darkness: Twilight Horizons</h3>
+              <p class="journal-summary">
+                In conversation with master lighting designers on the restorative psychological power of low color temperature hearths and nocturnal sightlines.
+              </p>
+              <button type="button" class="journal-link open-inquiry-modal" data-modal="inquiry">Read dialogue ↗</button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Consultation Invitation -->
+    <section class="inquiry-banner-section" id="contact" aria-label="Commission Dialogue">
+      <div class="site-container">
+        <div class="inquiry-banner-card">
+          <div class="banner-left">
+            <h2 class="banner-title">HAVE A VISION FOR YOUR SANCTUARY?</h2>
+            <p class="banner-sub">
+              We accept a limited number of residential and cultural commissions annually to ensure our studio personally oversees every milestone from geological surveying to handover.
+            </p>
+          </div>
+          <div class="banner-right">
+            <button type="button" class="btn-solid btn-banner-action open-inquiry-modal" data-modal="inquiry">
+              Commence dialogue ↗
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="footer" aria-label="Site Footer">
+    <div class="site-container footer-inner">
+      
+      <div class="footer-top-row">
+        <div class="footer-brand-wrap">
+          <a href="#hero" class="brand-logo" aria-label="Elevate Properties">
+            <span class="brand-name">E L E V A T E</span>
+            <span class="brand-sub">PROPERTIES</span>
+          </a>
+          <nav class="footer-nav" aria-label="Footer">
+            <ul class="footer-nav-list">
+              <li><a href="#projects" class="footer-link">Projects</a></li>
+              <li><a href="#studio" class="footer-link">Studio</a></li>
+              <li><a href="#materials" class="footer-link">Archive</a></li>
+              <li><a href="#journal" class="footer-link">Journal</a></li>
+              <li><a href="#contact" class="footer-link">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="footer-cta-wrap">
+          <button type="button" class="btn-solid open-inquiry-modal" data-modal="inquiry">
+            LET'S TALK ↗
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-categories">
+          Architecture & Selected Residences
+        </div>
+        <div class="footer-copyright">
+          Elevate Properties. All rights reserved.
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Project Detail Drawer Modal -->
+  <div class="project-modal-backdrop" id="project-modal" aria-hidden="true">
+    <div class="project-modal-panel" role="dialog" aria-labelledby="modal-proj-title">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close project modal">&times;</button>
+      
+      <div class="modal-body">
+        <div class="modal-media-wrap">
+          <img id="modal-proj-img" src="images/project-horizon.jpg" alt="" class="modal-img">
+        </div>
+        
+        <div class="modal-content">
+          <h2 class="modal-title" id="modal-proj-title">THE HORIZON HOUSE</h2>
+          <div class="modal-location" id="modal-proj-loc">Costa Brava, Spain</div>
+          
+          <p class="modal-narrative" id="modal-proj-desc">
+            Perched cantilevered above the Mediterranean coastline, The Horizon House dissolves the distinction between indoor comfort and elemental nature. Cast-in-place board-formed concrete walls frame panoramic twilight views, while thermal double-glazed pivot glass walls open to an infinity lap pool.
+          </p>
+
+          <div class="modal-specs-list">
+            <div class="spec-row">
+              <span class="spec-name">Typology</span>
+              <span class="spec-val" id="modal-spec-type">Private Coastal Estate</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-name">Internal Area</span>
+              <span class="spec-val" id="modal-spec-area">820 m² / 8,820 sq ft</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-name">Materials</span>
+              <span class="spec-val" id="modal-spec-materials">Board-formed Concrete, Roman Travertine, Low-Iron Glass</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-name">Completion</span>
+              <span class="spec-val" id="modal-spec-year">2025</span>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-solid open-inquiry-modal" data-modal="inquiry" style="width: 100%; justify-content: center;">
+              Inquire about similar commission ↗
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inquiry Modal -->
+  <div class="inquiry-modal-backdrop" id="inquiry-modal" aria-hidden="true">
+    <div class="inquiry-modal-panel" role="dialog" aria-labelledby="inquiry-modal-title">
+      <button type="button" class="modal-close-btn" id="inquiry-close-btn" aria-label="Close inquiry dialog">&times;</button>
+      
+      <div class="inquiry-form-container">
+        <div class="inquiry-header">
+          <h2 id="inquiry-modal-title" class="inquiry-title">COMMENCE A PROJECT</h2>
+          <p class="inquiry-sub">
+            Please share brief context on your prospective site and vision. A principal from our design studio will respond within 48 hours.
+          </p>
+        </div>
+
+        <form id="inquiry-form" class="inquiry-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="client-name" class="form-label">Full Name</label>
+              <input type="text" id="client-name" name="name" required class="form-input" placeholder="e.g. Julian Vance">
+            </div>
+            <div class="form-group">
+              <label for="client-email" class="form-label">Direct Email</label>
+              <input type="email" id="client-email" name="email" required class="form-input" placeholder="e.g. julian@vance.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="project-type" class="form-label">Project Typology</label>
+              <select id="project-type" name="type" class="form-select">
+                <option value="coastal">Coastal Residence</option>
+                <option value="mountain">Mountain / Lake Sanctuary</option>
+                <option value="compound">Private Family Compound</option>
+                <option value="cultural">Boutique Pavilion / Cultural</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="project-location" class="form-label">Site Location & Country</label>
+              <input type="text" id="project-location" name="location" class="form-input" placeholder="e.g. Mallorca, Spain / Aspen, CO">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="project-scope" class="form-label">Estimated Scale / Context</label>
+            <textarea id="project-scope" name="scope" rows="3" class="form-textarea" placeholder="Tell us about the parcel, acreage, or architectural intent..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-solid" style="width: 100%; justify-content: center;" id="inquiry-submit-btn">
+            Submit project dispatch ↗
+          </button>
+
+          <div class="form-success-msg" id="form-success-msg" style="display: none;">
+            <h4>Inquiry Received in Confidence</h4>
+            <p>Thank you for reaching out. A studio partner will review your architectural site context and be in touch shortly.</p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
