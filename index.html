@@ -302,30 +302,30 @@
         <div class="materials-explorer-grid">
           
           <!-- Material Selector Tabs -->
-          <div class="materials-nav-list" role="tablist" aria-label="Architectural Materials">
+          <div class="materials-nav-list" role="group" aria-label="Choose a material">
             
-            <button type="button" class="material-tab-item active" role="tab" aria-selected="true" data-material="travertine">
+            <button type="button" class="material-tab-item active" aria-pressed="true" data-material="travertine">
               <div class="tab-info">
                 <h3 class="tab-title">TRAVERTINE NAVONA</h3>
                 <span class="tab-origin">Tuscan Quarry · Honed Vein-Cut</span>
               </div>
             </button>
 
-            <button type="button" class="material-tab-item" role="tab" aria-selected="false" data-material="concrete">
+            <button type="button" class="material-tab-item" aria-pressed="false" data-material="concrete">
               <div class="tab-info">
                 <h3 class="tab-title">BOARD-FORMED CONCRETE</h3>
                 <span class="tab-origin">Titanium White Portland · Cedar Grain</span>
               </div>
             </button>
 
-            <button type="button" class="material-tab-item" role="tab" aria-selected="false" data-material="stone">
+            <button type="button" class="material-tab-item" aria-pressed="false" data-material="stone">
               <div class="tab-info">
                 <h3 class="tab-title">ROUGH-HEWN LIMESTONE</h3>
                 <span class="tab-origin">Lombardy Alps · Dry-Stacked Masonry</span>
               </div>
             </button>
 
-            <button type="button" class="material-tab-item" role="tab" aria-selected="false" data-material="timber">
+            <button type="button" class="material-tab-item" aria-pressed="false" data-material="timber">
               <div class="tab-info">
                 <h3 class="tab-title">YAKISUGI CHARRED CEDAR</h3>
                 <span class="tab-origin">Traditional Pyrolysis · Deep Carbon Grain</span>
@@ -335,7 +335,7 @@
           </div>
 
           <!-- Interactive Specimen Display -->
-          <div class="material-display-card" id="material-display">
+          <div class="material-display-card" id="material-display" aria-live="polite">
             <div class="specimen-media-wrap">
               <img 
                 id="specimen-img"
@@ -346,6 +346,7 @@
             </div>
             
             <div class="specimen-meta">
+              <span class="specimen-label">MATERIAL STUDY</span>
               <h3 id="specimen-name" class="specimen-title">TRAVERTINE NAVONA</h3>
               <p id="specimen-desc" class="specimen-desc">
                 Extracted from historical quarries in Tivoli, this travertine exhibits delicate linear porosity and warm bone hues. Honed without synthetic filler to retain tactile coolness under direct sun.

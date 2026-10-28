@@ -392,30 +392,23 @@ document.addEventListener('DOMContentLoaded', () => {
     tab.addEventListener('click', () => {
       materialTabs.forEach(t => {
         t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
+        t.setAttribute('aria-pressed', 'false');
       });
       tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('aria-pressed', 'true');
 
       const matKey = tab.getAttribute('data-material');
       const mat = materialsData[matKey];
       if (!mat || !specimenImg) return;
 
-      specimenImg.style.opacity = '0';
-      specimenImg.style.transform = 'scale(1.02)';
-
-      setTimeout(() => {
-        specimenImg.src = mat.img;
-        if (specimenName) specimenName.textContent = mat.name;
-        if (specimenDesc) specimenDesc.textContent = mat.desc;
-        if (specThermal) specThermal.textContent = mat.thermal;
-        if (specAcoustic) specAcoustic.textContent = mat.acoustic;
-        if (specAging) specAging.textContent = mat.aging;
-        if (specProject) specProject.textContent = mat.project;
-
-        specimenImg.style.opacity = '1';
-        specimenImg.style.transform = 'scale(1)';
-      }, 200);
+      specimenImg.src = mat.img;
+      specimenImg.alt = `Architectural material sample: ${mat.name.toLowerCase()}`;
+      if (specimenName) specimenName.textContent = mat.name;
+      if (specimenDesc) specimenDesc.textContent = mat.desc;
+      if (specThermal) specThermal.textContent = mat.thermal;
+      if (specAcoustic) specAcoustic.textContent = mat.acoustic;
+      if (specAging) specAging.textContent = mat.aging;
+      if (specProject) specProject.textContent = mat.project;
     });
   });
 

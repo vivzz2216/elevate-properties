@@ -1474,3 +1474,36 @@ p {
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
 @media (max-width: 768px) { .project-feature-card { grid-template-columns: 1fr; } .feature-meta { padding: 30px 25px; } }
+
+
+/* Material archive */
+.materials-section { background: #e8e5dc; color: #252b25; padding-block: clamp(85px, 9vw, 130px); }
+.materials-section .section-heading-group { align-items: end; gap: 24px; border-bottom: 1px solid #bbbcb1; padding-bottom: 30px; margin-bottom: 42px; }
+.materials-section .section-title { color: #252b25; }
+.materials-section .section-note { color: #555d53; max-width: 330px; line-height: 1.65; }
+.materials-explorer-grid { grid-template-columns: minmax(260px, .68fr) minmax(0, 1.32fr); gap: clamp(32px, 6vw, 90px); }
+.materials-nav-list { gap: 0; counter-reset: material; border-top: 1px solid #b6b9ad; }
+.material-tab-item { counter-increment: material; display: grid; grid-template-columns: 34px 1fr 22px; gap: 12px; align-items: center; background: transparent; border-bottom: 1px solid #b6b9ad; padding: 24px 0; transition: color .25s ease; }
+.material-tab-item::before { content: '0' counter(material); align-self: start; color: #6b7167; font-size: 11px; padding-top: 4px; }
+.material-tab-item::after { content: '↗'; color: #59645a; font-size: 19px; opacity: .4; transition: transform .25s, opacity .25s; }
+.material-tab-item:hover, .material-tab-item.active { background: transparent; }
+.material-tab-item:hover::after, .material-tab-item.active::after { opacity: 1; transform: translate(3px, -3px); }
+.material-tab-item .tab-title { font: 400 clamp(21px, 2vw, 27px)/1.15 var(--font-editorial); letter-spacing: -.01em; color: #535950; margin-bottom: 7px; }
+.material-tab-item.active .tab-title, .material-tab-item:hover .tab-title { color: #171d17; }
+.material-tab-item.active::before { color: #272e27; font-weight: 700; }
+.material-tab-item .tab-origin { font-size: 12px; color: #636b60; line-height: 1.5; }
+.material-display-card { background: #f7f5ee; color: #252b25; overflow: hidden; }
+.specimen-media-wrap { aspect-ratio: 16 / 9; background: #d1c9bb; }
+.specimen-img { object-fit: cover; }
+.specimen-meta { padding: clamp(26px, 4vw, 50px); }
+.specimen-label { display: block; color: #657064; font-size: 10px; font-weight: 600; letter-spacing: .15em; margin-bottom: 14px; }
+.specimen-title { color: #252b25; font: 400 clamp(33px, 3.6vw, 50px)/1.1 var(--font-editorial); text-transform: none; margin-bottom: 17px; }
+.specimen-desc { color: #4f584e; font-size: 15px; line-height: 1.75; max-width: 66ch; margin-bottom: 28px; }
+.specimen-specs-table { border-top: 1px solid #c9cdc1; padding-top: 22px; gap: 24px; }
+.spec-prop { color: #5a655a; font-size: 12px; margin-bottom: 5px; }
+.spec-val { color: #242d24; font-size: 13px; line-height: 1.5; }
+@media(max-width: 768px) { .materials-section .section-heading-group { display: block; } .materials-section .section-note { margin-top: 18px; } .materials-explorer-grid { grid-template-columns: 1fr; gap: 30px; } .material-tab-item { padding: 19px 0; } .specimen-media-wrap { aspect-ratio: 4 / 3; } .specimen-meta { padding: 28px 24px 32px; } }
+@media(max-width: 390px) { .specimen-specs-table { gap: 20px 16px; } }
+.material-tab-item .tab-info { min-width: 0; }
+.material-tab-item .tab-title { overflow-wrap: anywhere; }
+.material-tab-item:hover::after, .material-tab-item.active::after { transform: translateY(-3px); }
