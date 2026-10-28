@@ -1507,3 +1507,25 @@ p {
 .material-tab-item .tab-info { min-width: 0; }
 .material-tab-item .tab-title { overflow-wrap: anywhere; }
 .material-tab-item:hover::after, .material-tab-item.active::after { transform: translateY(-3px); }
+
+/* Restore the archive's dark architectural palette and balanced columns. */
+.materials-section { background: #101310; color: #f1f0e9; }
+.materials-section .section-heading-group { border-color: #4e554c; }
+.materials-section .section-title { color: #f1f0e9; }
+.materials-section .section-note { color: #c0c4b9; }
+.materials-explorer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); }
+.materials-nav-list { border-color: #4e554c; }
+.material-tab-item { border-color: #4e554c; }
+.material-tab-item::before, .material-tab-item::after { color: #aeb6a9; }
+.material-tab-item .tab-title { color: #c3c9be; }
+.material-tab-item.active .tab-title, .material-tab-item:hover .tab-title { color: #f4f1e8; }
+.material-tab-item.active::before { color: #e8ddce; }
+.material-tab-item .tab-origin { color: #b4bbaf; }
+.material-display-card { background: #1b201c; color: #f1f0e9; }
+.specimen-label { color: #c7cfc1; }
+.specimen-title { color: #f1f0e9; }
+.specimen-desc { color: #c3c8bd; }
+.specimen-specs-table { border-color: #555d53; }
+.spec-prop { color: #adb6aa; }
+.spec-val { color: #f2f2eb; }
+@media(max-width: 768px) { .materials-explorer-grid { grid-template-columns: 1fr; } }

@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const materialsData = {
     'travertine': {
       name: 'TRAVERTINE NAVONA',
-      img: 'images/material-travertine.jpg',
+      img: 'images/material-travertine-detail.webp',
       desc: 'Extracted from historical quarries in Tivoli, this travertine exhibits delicate linear porosity and warm bone hues. Honed without synthetic filler to retain tactile coolness under direct sun.',
       thermal: 'High (840 J/kg·K)',
       acoustic: '0.32 NRC (Unfilled Micro-cavities)',
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'concrete': {
       name: 'BOARD-FORMED CONCRETE',
-      img: 'images/material-concrete.jpg',
+      img: 'images/material-concrete-detail.webp',
       desc: 'Formed using rough-sawn Douglas fir boards with pronounced wood grain. The concrete absorbs the resin and knots of the timber during curing, producing a monolithic structural skin.',
       thermal: 'Monumental (1,000 J/kg·K)',
       acoustic: 'Acoustically Reflective / Bass Trap',
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'stone': {
       name: 'ROUGH-HEWN LIMESTONE',
-      img: 'images/material-stone.jpg',
+      img: 'images/material-stone-detail.webp',
       desc: 'Hand-split limestone blocks sourced within 15 kilometers of the project site. Laid with concealed lime mortar to establish seamless geological continuity with mountain bedrock.',
       thermal: 'High (920 J/kg·K)',
       acoustic: 'Diffusive Sound Scattering',
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     'timber': {
       name: 'YAKISUGI CHARRED CEDAR',
-      img: 'images/material-timber.jpg',
+      img: 'images/material-timber-detail.webp',
       desc: 'Superficial heat treatment producing a dense carbonized outer crust. Naturally resistant to marine rot, insect predation, and wildfires without chemical sealants.',
       thermal: 'Moderate Insulator (1,400 J/kg·K)',
       acoustic: 'Mild Sound Absorption',
