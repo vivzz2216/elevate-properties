@@ -1529,3 +1529,36 @@ p {
 .spec-prop { color: #adb6aa; }
 .spec-val { color: #f2f2eb; }
 @media(max-width: 768px) { .materials-explorer-grid { grid-template-columns: 1fr; } }
+
+/* Material library: a full-width selector above a unified specimen spread. */
+.materials-explorer-grid { display: block; }
+.materials-nav-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 0; gap: 0; margin-bottom: 0; }
+.material-tab-item { position: relative; display: block; min-width: 0; padding: 20px 20px 24px 0; border-top: 1px solid #4e554c; border-bottom: 1px solid #4e554c; }
+.material-tab-item { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; text-align: left; }
+.material-tab-item:not(:first-child) { padding-left: 20px; }
+.material-tab-item::before { display: block; margin-bottom: 15px; padding: 0; }
+.material-tab-item::after { display: none; }
+.material-tab-item .tab-title { font-size: clamp(18px, 1.6vw, 23px); margin-bottom: 8px; }
+.material-tab-item .tab-origin { max-width: 24ch; }
+.material-tab-item.active { box-shadow: inset 0 -3px #d2b28e; }
+.material-display-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+.specimen-media-wrap { height: 100%; min-height: 440px; aspect-ratio: auto; }
+.specimen-img { width: 100%; height: 100%; }
+.specimen-meta { align-self: center; padding: clamp(32px, 4vw, 58px); }
+.specimen-title { font-size: clamp(32px, 3.2vw, 48px); }
+@media(max-width: 900px) {
+  .materials-nav-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .material-tab-item { padding: 20px 20px 22px 0; }
+  .material-tab-item:not(:first-child) { padding-left: 0; }
+  .material-tab-item:nth-child(even) { padding-left: 20px; }
+  .material-tab-item:nth-child(n+3) { border-top: 0; }
+  .material-display-card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .specimen-media-wrap { min-height: 390px; }
+}
+@media(max-width: 650px) {
+  .material-display-card { grid-template-columns: 1fr; }
+  .specimen-media-wrap { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+  .specimen-meta { padding: 30px 24px 36px; }
+  .material-tab-item .tab-title { font-size: 19px; }
+  .material-tab-item .tab-origin { font-size: 11px; }
+}
