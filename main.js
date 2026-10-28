@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       if (inquirySubmitBtn) {
         inquirySubmitBtn.disabled = true;
-        inquirySubmitBtn.textContent = 'Transmitting dispatch...';
+        inquirySubmitBtn.textContent = 'Preparing preview...';
       }
 
       setTimeout(() => {
